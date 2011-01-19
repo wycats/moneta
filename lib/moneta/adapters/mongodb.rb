@@ -40,7 +40,9 @@ module Moneta
 
       def store(key, value, *)
         key = key_for(key)
-        @cache.insert({ '_id' => key, 'data' => serialize(value) })
+        @cache.update({ '_id' => key },
+                      { '_id' => key, 'data' => serialize(value) },
+                      { :upsert => true })
       end
 
       def clear(*)
