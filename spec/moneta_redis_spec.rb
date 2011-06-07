@@ -10,6 +10,11 @@ begin
     end
 
     it_should_behave_like "a read/write Moneta cache"
+    
+    it 'supports :expires_in' do
+      @cache.store('foo', 'bar', :expires_in => -3)
+      @cache['foo'].should be_nil
+    end
   end
 rescue SystemExit
 end
