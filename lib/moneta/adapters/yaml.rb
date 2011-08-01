@@ -42,7 +42,7 @@ module Moneta
 
     private
       def yaml
-        ::YAML.load_file(@file)
+        ::YAML.load_file(@file) || {}
       end
 
       def save(hash = {})
