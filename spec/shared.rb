@@ -58,6 +58,9 @@ shared_examples_for "a read/write Moneta cache" do
       @cache.key?(key2).should_not be_true
     end
 
+    it "fetches a #{type} key with a default value of nil, if the key is not available" do
+      @cache.fetch(key).should be_nil
+    end
     it "fetches a #{type} key with a default value with fetch, if the key is not available" do
       @cache.fetch(key, "value").should == "value"
     end
