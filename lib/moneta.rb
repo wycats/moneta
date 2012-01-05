@@ -4,7 +4,7 @@ module Moneta
   module Defaults
     def fetch(key, value = nil, *)
       self[key] || begin
-        value ||= block_given? ? yield(key) : default
+        value = block_given? ? yield(key) : value
         self[key] || value
       end
     end
