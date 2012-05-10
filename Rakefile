@@ -5,7 +5,7 @@ require 'spec/rake/spectask'
 require 'date'
 
 GEM = "moneta"
-GEM_VERSION = "0.5.0"
+GEM_VERSION = "0.6.1"
 AUTHOR = "Yehuda Katz"
 EMAIL = "wycats@gmail.com"
 HOMEPAGE = "http://www.yehudakatz.com"
