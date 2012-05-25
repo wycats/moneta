@@ -29,8 +29,10 @@ module Moneta
         value
       end
 
-      def store(key, value, *)
-        @cache.set(key_for(key), serialize(value))
+      def store(key, value, opts={})
+        string_key = key_for(key)
+        @cache.set(string_key, serialize(value))
+        @cache.expire(string_key, opts[:expires_in]) if opts[:expires_in]
       end
 
       def clear(*)
