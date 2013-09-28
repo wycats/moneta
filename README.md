@@ -1,2 +1,4 @@
-Moneta development moved to https://github.com/minad/moneta
-===========================================================
+Moneta development moved
+========================
+
+Moneta development has moved to https://github.com/minad/moneta
